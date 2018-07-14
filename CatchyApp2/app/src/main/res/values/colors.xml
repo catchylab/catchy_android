@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--Text Color-->
+    <color name="textColorInButton">#FFF</color>
+    <color name="textHintColorInEditText">#FFF</color>
+    <color name="textColorInTexView">#FFF</color>
+    <color name="textHeader">#FFF</color>
+    <color name="textColorGrayDark">#4D4D4D</color>
+    <color name="textColorPinkLight">#FF4E50</color>
+    <!---->
+
+    <!--Background Color -->
+    <color name="background_white">#FFF</color>
+    <color name="grey_light">#808080</color>
+    <!--End Background-->
+</resources>

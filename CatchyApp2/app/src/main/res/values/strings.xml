@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">CatchyApp</string>
+    <string name="header_register_1">Đăng Ký \n1/2</string>
+    <string name="header_login">Đăng nhập</string>
+    <string name="header_register_2">Đăng Ký \n2/2</string>
+    <string name="string_accept_rules">Bạn đồng ý với các điều khoản bảo mật</string>
+
+    <!--Activity Main Languge-->
+    <string name="introduce">Vui lòng chọn ngôn ngữ</string>
+    <string name="langue_english">English</string>
+    <string name="langue_vietnamese">Việt Nam</string>
+    <string name="btn_continue">Tiếp tục</string>
+    <!---->
+
+    <!--Activity Navigation Sign in or Sign Up-->
+    <string name="nav_login">Đăng nhập</string>
+    <string name="nav_comback">Trở về</string>
+    <string name="btn_go_to_signup">Đăng ký bằng Email</string>
+    <string name="btn_login_fb">Đăng nhập bằng Facebook</string>
+    <!--End Activity Navigation Sign in or Sign Up-->
+
+    <!---->
+    <string name="txt_capture">Ảnh đại diện</string>
+    <string name="txt_genderselect">Giới tính</string>
+    <!---->
+
+    <!--Button-->
+    <string name="btn_continute">Tiếp tục</string>
+    <string name="btn_login">Khám phá Catchy</string>
+    <!---->
+    <string name="action_cancel">Cancel</string>
+    <string name="action_crop">Crop</string>
+    <string name="action_settings">Settings</string>
+</resources>
