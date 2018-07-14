@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Text Size-->
+    <dimen name="textSizeLanguge">32dp</dimen>
+    <dimen name="textSizeTextInstroduceLanguge">22dp</dimen>
+    <!--End Text Size-->
+
+    <dimen name="textSizeButton">20dp</dimen>
+    <!--Butotn Size-->
+    <dimen name="space_bottom_button_8">8dp</dimen>
+    <dimen name="space_bottom_button_13">13dp</dimen>
+    <!--End Button Size-->
+
+    <!--background-->
+    <dimen name="fix_size_background_20">20dp</dimen>
+    <dimen name="fix_size_background_10">10dp</dimen>
+    <dimen name="fix_size_background_30">30dp</dimen>
+    <dimen name="view_width_small">1dp</dimen>
+    <dimen name="view_width_xsmall">0.5dp</dimen>
+    <!--end background-->
+</resources>
