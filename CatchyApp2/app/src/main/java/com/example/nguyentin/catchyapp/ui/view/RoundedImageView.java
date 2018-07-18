@@ -2,6 +2,7 @@ package com.example.nguyentin.catchyapp.ui.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -18,31 +19,32 @@ import com.example.nguyentin.catchyapp.R;
 public class RoundedImageView extends ImageView {
     private Path mMaskPath;
     private Paint mMaskPaint    = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private int mCornerRadius   = 20;
+    private int mCornerRadius = 0;
 
-    public RoundedImageView(Context context) {
-        super(context);
-
-        init(context);
-    }
+//    public RoundedImageView(Context context) {
+//        super(context);
+//
+//        init(context);
+//    }
 
     public RoundedImageView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        init(context);
+        init(context, attributeSet);
     }
 
     public RoundedImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
-        init(context);
+        init(context, attrs);
     }
 
-    private void init(Context context) {
+    private void init(Context context, AttributeSet attrs) {
         ViewCompat.setLayerType(this, ViewCompat.LAYER_TYPE_SOFTWARE, null);
         mMaskPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         mMaskPaint.setColor(context.getResources().getColor(android.R.color.transparent));
 
-        mCornerRadius = (int) context.getResources().getDimension(R.dimen.space_bottom_button_13);
+//        mCornerRadius = (int) context.getResources().getDimension(R.dimen.space_bottom_button_13);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundedImageView);
+        mCornerRadius = a.getDimensionPixelSize(R.styleable.RoundedImageView_radius, 0);
     }
 
     /**
