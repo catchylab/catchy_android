@@ -14,7 +14,7 @@ public class CatchyApi {
     public static int recordsPage = 10;
 
     private static final int TIME_OUT = 60;
-    private static final String BASE_URL = "";
+    private static final String BASE_URL = "http://45.48.46";
 
     public static void initAPI(){
         okHttpClient = new OkHttpClient.Builder()
