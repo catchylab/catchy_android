@@ -1,0 +1,87 @@
+package com.example.nguyentin.catchyapp.ui.view;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.support.v4.view.ViewCompat;
+import android.util.AttributeSet;
+import android.widget.ImageView;
+
+import com.example.nguyentin.catchyapp.R;
+
+@SuppressLint("AppCompatCustomView")
+public class RoundedImageView extends ImageView {
+    private Path mMaskPath;
+    private Paint mMaskPaint    = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private int mCornerRadius = 0;
+
+//    public RoundedImageView(Context context) {
+//        super(context);
+//
+//        init(context);
+//    }
+
+    public RoundedImageView(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        init(context, attributeSet);
+    }
+
+    public RoundedImageView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init(context, attrs);
+    }
+
+    private void init(Context context, AttributeSet attrs) {
+        ViewCompat.setLayerType(this, ViewCompat.LAYER_TYPE_SOFTWARE, null);
+        mMaskPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        mMaskPaint.setColor(context.getResources().getColor(android.R.color.transparent));
+
+//        mCornerRadius = (int) context.getResources().getDimension(R.dimen.space_bottom_button_13);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundedImageView);
+        mCornerRadius = a.getDimensionPixelSize(R.styleable.RoundedImageView_radius, 0);
+    }
+
+    /**
+     * Set the corner radius to use for the RoundedRectangle.
+     */
+    public void setCornerRadius(int cornerRadius) {
+        mCornerRadius = cornerRadius;
+        generateMaskPath(getWidth(), getHeight());
+        invalidate();
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldW, int oldH) {
+        super.onSizeChanged(w, h, oldW, oldH);
+
+        if (w != oldW || h != oldH) {
+            generateMaskPath(w, h);
+        }
+    }
+
+    private void generateMaskPath(int w, int h) {
+        mMaskPath = new Path();
+        mMaskPath.addRoundRect(new RectF(0,0,w,h), mCornerRadius, mCornerRadius, Path.Direction.CW);
+        mMaskPath.setFillType(Path.FillType.INVERSE_WINDING);
+    }
+
+    @SuppressLint("WrongConstant")
+    @Override
+    protected void onDraw(Canvas canvas) {
+        if(canvas.isOpaque()) { // If canvas is opaque, make it transparent
+            canvas.saveLayerAlpha(0, 0, canvas.getWidth(), canvas.getHeight(), 255, Canvas.HAS_ALPHA_LAYER_SAVE_FLAG);
+        }
+
+        super.onDraw(canvas);
+
+        if(mMaskPath != null) {
+            canvas.drawPath(mMaskPath, mMaskPaint);
+        }
+    }
+}

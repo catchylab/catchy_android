@@ -2,7 +2,10 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#FF4E50</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorShadow">#6bdadada</color>
 
     <!--Text Color-->
     <color name="textColorInButton">#FFF</color>
@@ -17,4 +20,14 @@
     <color name="background_white">#FFF</color>
     <color name="grey_light">#808080</color>
     <!--End Background-->
+
+    <!--TODO: Home Activity - ha-->
+    <color name="ha_btn_top_left_start">#e6ff3335</color>
+    <color name="ha_btn_top_left_end">#e6ffb3bc</color>
+    <color name="ha_btn_top_right_start">#e6f2709c</color>
+    <color name="ha_btn_top_right_end">#FFC7DA</color>
+    <color name="ha_btn_bottom_left_start">#e629ABE2</color>
+    <color name="ha_btn_bottom_left_end">#e680D9FF</color>
+    <color name="ha_btn_bottom_right_start">#e66671E6</color>
+    <color name="ha_btn_bottom_right_end">#e6B3B9FF</color>
 </resources>
