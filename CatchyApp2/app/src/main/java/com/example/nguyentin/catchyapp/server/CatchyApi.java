@@ -3,7 +3,6 @@ package com.example.nguyentin.catchyapp.server;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
-import retrofit2.Call;
 import retrofit2.Retrofit;
 
 public class CatchyApi {
