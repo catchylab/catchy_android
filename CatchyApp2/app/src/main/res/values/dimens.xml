@@ -18,4 +18,8 @@
     <dimen name="view_width_small">1dp</dimen>
     <dimen name="view_width_xsmall">0.5dp</dimen>
     <!--end background-->
+
+    <dimen name="padding_top">20dp</dimen>
+    <!--TODO: Explore screen - es-->
+
 </resources>
