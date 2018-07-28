@@ -2,6 +2,7 @@ package com.example.nguyentin.catchyapp.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.util.Base64;
 import android.util.Log;
 
@@ -40,6 +41,20 @@ public class OperateBitmap {
     public static Bitmap getBitmap(String input){
         byte[] decodedByte = Base64.decode(input, 0);
         return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
+    }
+
+    public static Bitmap getBitmap(byte[] bytes){
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+    }
+
+    public static Bitmap rotate(Bitmap bitmap, int degree) {
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+
+        Matrix mtx = new Matrix();
+        mtx.postRotate(degree);
+
+        return Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, true);
     }
 
     /**

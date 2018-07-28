@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+        android:id="@+id/imgItemTrend"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#456987"
+        app:radius="20dp"/>
+
+</android.support.constraint.ConstraintLayout>

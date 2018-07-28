@@ -20,6 +20,11 @@
     <!--end background-->
 
     <dimen name="padding_top">20dp</dimen>
+    <dimen name="paddding_general">16dp</dimen>
+    <dimen name="margin_item">4dp</dimen>
+
+    <dimen name="corner_item_home">12dp</dimen>
+    <dimen name="shadow_item_home">10dp</dimen>
     <!--TODO: Explore screen - es-->
 
 </resources>

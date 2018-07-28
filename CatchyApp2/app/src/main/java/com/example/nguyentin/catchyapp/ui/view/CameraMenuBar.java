@@ -12,7 +12,7 @@ public class CameraMenuBar extends ConstraintLayout {
     private Context context;
 
     // View
-    ImageView imgCamera, imgMovie, imgMessage;
+    ImageView imgMovie, imgMessage;
 
     public CameraMenuBar(Context context) {
         super(context);
@@ -34,13 +34,8 @@ public class CameraMenuBar extends ConstraintLayout {
 
     private void initView(){
         inflate(context, R.layout.view_camera_menu_bar, this);
-        imgCamera  = (ImageView) findViewById(R.id.imgCamera);
         imgMovie   = (ImageView) findViewById(R.id.imgMovie);
         imgMessage = (ImageView) findViewById(R.id.imgMessage);
-    }
-
-    public ImageView getImgCamera() {
-        return imgCamera;
     }
 
     public ImageView getImgMessage() {

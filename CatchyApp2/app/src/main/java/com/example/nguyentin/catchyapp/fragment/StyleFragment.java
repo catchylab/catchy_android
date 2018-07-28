@@ -7,17 +7,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.nguyentin.catchyapp.R;
+import com.example.nguyentin.catchyapp.util.OperateBitmap;
 
 public class StyleFragment extends Fragment {
     // View
     View view;
-
+    ImageView imgTest;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_style, container, false);
+        imgTest = (ImageView) view.findViewById(R.id.imgTest);
+        imgTest.setImageBitmap(OperateBitmap.getBitmap(getActivity().getString(R.string.test)));
         return view;
     }
 }
