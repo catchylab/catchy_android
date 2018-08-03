@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--check-->
+    <item android:state_checked="true"
+        android:color="@color/colorWhite"
+        android:drawable="@drawable/tab_explore_checked">
+    </item>
+
+    <!--normal-->
+    <item android:color="#61000000"
+        android:drawable="@drawable/tab_explore_normal">
+    </item>
+
+</selector>

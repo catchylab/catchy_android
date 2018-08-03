@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -24,21 +25,17 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.UnsupportedEncodingException;
 
-public class PreviewImageDialog extends Dialog {
+public class PreviewImageDialog extends Dialog implements View.OnClickListener {
     // Constructor
-    private Context context;
-    private byte[] bytes;
-    private Activity activity;
+    private Bitmap bitmap;
 
     // View
-    CropView cropView;
-    ImageView imgCrop;
+    ImageView imgPreview, imgBack;
 
-    public PreviewImageDialog(@NonNull Context context, byte[] bytes, Activity activity) {
-        super(context, android.R.style.Theme_Light_NoTitleBar_Fullscreen);
-        this.context = context;
-        this.bytes = bytes;
-        this.activity = activity;
+    public PreviewImageDialog(@NonNull Context context, Bitmap bitmap) {
+        super(context, R.style.ResultCaptureDialog);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.bitmap = bitmap;
     }
 
     @Override
@@ -46,42 +43,23 @@ public class PreviewImageDialog extends Dialog {
         super.onCreate(savedInstanceState);
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
         setContentView(R.layout.dialog_preview_image);
-        cropView = (CropView) findViewById(R.id.cropView);
-        imgCrop = (ImageView) findViewById(R.id.imgCrop);
+        initView();
 
-        imgCrop.setImageBitmap(OperateBitmap.rotate(OperateBitmap.getBitmap(bytes), 90));
+        imgPreview.setImageBitmap(bitmap);
+        imgBack.setOnClickListener(this);
+    }
 
-        int width = activity.getWindowManager().getDefaultDisplay().getWidth();
-        int height = activity.getWindowManager().getDefaultDisplay().getHeight();
+    private void initView(){
+        imgPreview = (ImageView) findViewById(R.id.imgPreview);
+        imgBack    = (ImageView) findViewById(R.id.imgBack);
+    }
 
-        Bitmap bitmap1 = Bitmap.createScaledBitmap(((BitmapDrawable) imgCrop.getDrawable())
-                .getBitmap(),
-                width,
-                height, false);
-
-        Bitmap bitmap = Bitmap.createBitmap(bitmap1,
-                cropView.getLeft(), cropView.getTop(), width,
-                height);
-
-        imgCrop.setImageBitmap(bitmap);
-
-//        cropView.setOnUpCallback(new CropView.OnUpCallback() {
-//            @Override
-//            public void onRectFinished(Rect rect) {
-//                Bitmap bitmap1 = Bitmap.createScaledBitmap(((BitmapDrawable) imgCrop.getDrawable())
-//                        .getBitmap(), imgCrop.getWidth(), imgCrop
-//                        .getHeight(), false);
-//
-//                if (rect.height() <= bitmap1.getHeight()
-//                        && rect.width() <= bitmap1.getWidth()) {
-//                    Bitmap bitmap = Bitmap.createBitmap(bitmap1,
-//                            cropView.getLeft(), cropView.getTop(), cropView.getWidth(),
-//                            cropView.getHeight());
-//
-//                    imgCrop.setImageBitmap(bitmap);
-//
-//                }
-//            }
-//        });
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.imgBack:
+                cancel();
+                break;
+        }
     }
 }

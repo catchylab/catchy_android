@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.util.Base64;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
@@ -19,6 +20,9 @@ import static android.graphics.Bitmap.CompressFormat.PNG;
  */
 public class OperateBitmap {
     public static final double IMAGE_SIZE = 400;
+    public static final int HORIZONTAL = 1;
+    public static final int VERTICAL = -1;
+
     /**
      *
      * @param bitmap Bitmap
@@ -55,6 +59,22 @@ public class OperateBitmap {
         mtx.postRotate(degree);
 
         return Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, true);
+    }
+
+    public static Bitmap flip(Bitmap bitmap, int orientation){
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+
+        Matrix mtx = new Matrix();
+        if (orientation > 0){
+            mtx.preScale(-1, 1);
+        }else {
+            mtx.preScale(1, -1);
+        }
+
+        Bitmap result = Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, false);
+        result.setDensity(DisplayMetrics.DENSITY_DEFAULT);
+        return result;
     }
 
     /**

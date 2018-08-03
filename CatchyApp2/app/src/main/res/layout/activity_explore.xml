@@ -9,89 +9,157 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_toolbar"
+        android:layout_height="57dp"
+        android:background="@color/colorWhite"
         android:elevation="5dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="@dimen/padding_top">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imgBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_arrow_back"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="21dp"
+            android:src="@drawable/ic_arrow_back_black"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <LinearLayout
+            android:id="@+id/linearSearch"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/edt_search_dark"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="14dp"
+            android:weightSum="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgNext"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <EditText
+                android:id="@+id/edtSearchContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:enabled="false"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="Tìm kiếm"
+                android:textColor="#61000000"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/imgSearch"
+                android:layout_width="19dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_search_black" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgNext"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/ic_camera_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="1dp"
+            android:text="Khám phá"
+            android:textColor="#DE000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imgSearch"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_search_white"
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="9dp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/paddding_general"
+            android:paddingRight="@dimen/paddding_general"
+            android:weightSum="3"
+            android:checkedButton="@+id/rdbTrend"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="30dp"
-            android:text="@string/es_main_content"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imgSearch"
-            app:layout_constraintStart_toEndOf="@+id/imgBack"
-            app:layout_constraintTop_toTopOf="parent" />
+            <RadioButton
+                android:id="@+id/rdbTrend"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginRight="@dimen/margin_item"
+                android:layout_weight="1"
+                android:background="@drawable/tab_explore"
+                android:button="@null"
+                android:gravity="center"
+                android:text="XU HƯỚNG"
+                android:textColor="@drawable/tab_explore" />
+
+            <RadioButton
+                android:id="@+id/rdbStyle"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="@dimen/margin_item"
+                android:layout_marginRight="@dimen/margin_item"
+                android:layout_weight="1"
+                android:background="@drawable/tab_explore"
+                android:button="@null"
+                android:gravity="center"
+                android:text="PHONG CÁCH"
+                android:textColor="@drawable/tab_explore" />
+
+            <RadioButton
+                android:id="@+id/rdbSeen"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="@dimen/margin_item"
+                android:layout_weight="1"
+                android:background="@drawable/tab_explore"
+                android:button="@null"
+                android:gravity="center"
+                android:text="XEM GẦN ĐÂY"
+                android:textColor="@drawable/tab_explore" />
+
+        </RadioGroup>
+
     </android.support.constraint.ConstraintLayout>
-
-    <View
-        android:id="@+id/viewTemp"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/padding_top"
-        android:background="@color/colorWhite"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:elevation="5dp"
-        android:background="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewTemp">
-
-    </android.support.design.widget.TabLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"></android.support.v4.view.ViewPager>
-
-    <com.example.nguyentin.catchyapp.ui.view.CameraMenuBar
-        android:id="@+id/cameraBar"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </com.example.nguyentin.catchyapp.ui.view.CameraMenuBar>
 </android.support.constraint.ConstraintLayout>

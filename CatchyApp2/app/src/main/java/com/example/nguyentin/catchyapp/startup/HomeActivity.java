@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +14,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.activity.ExploreActivity;
@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     CoordinatorLayout coordinatorParent;
     AppBarLayout appBarParent;
     CollapsingToolbarLayout collapsing;
+    LinearLayout linearSmallIcon;
 
     // Var
     int height;
@@ -63,33 +64,31 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void initView(){
         recHotDeal = (RecyclerView) findViewById(R.id.recHotDeal);
         btnExplore = (FrameLayout) findViewById(R.id.btnExplore);
-        imgCamera = (ImageView) findViewById(R.id.imgCamera);
+        imgCamera = (ImageView) findViewById(R.id.imgNext);
 
         coordinatorParent = (CoordinatorLayout) findViewById(R.id.coordinatorParent);
         appBarParent = (AppBarLayout) findViewById(R.id.appBarParent);
         collapsing = (CollapsingToolbarLayout) findViewById(R.id.collapsing);
+        linearSmallIcon = (LinearLayout) findViewById(R.id.linearSmallIcon);
 
-
+        height = appBarParent.getHeight();
 
         appBarParent.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 float offsetAlpha = (appBarLayout.getY() / appBarLayout.getTotalScrollRange());
-//                viewPager.setAlpha(1 - (offsetAlpha * -1));
-//                Log.d("ddd", verticalOffset + " " + appBarLayout.getTotalScrollRange());
-//                if (appBarLayout.getTotalScrollRange() - Math.abs(verticalOffset) < height + 10) {
-//                    //collapse
-//                    txtHeader.setVisibility(View.VISIBLE);
-//                    imgBack.setColorFilter(ContextCompat.getColor(getApplicationContext(), R.color.app_violet), android.graphics.PorterDuff.Mode.MULTIPLY);
-//                    imgShare.setColorFilter(ContextCompat.getColor(getApplicationContext(), R.color.app_violet), android.graphics.PorterDuff.Mode.MULTIPLY);
+                Log.d("TTTT", offsetAlpha + "");
+                linearSmallIcon.setAlpha(offsetAlpha * (-1));
+                Log.d("ddd", verticalOffset + " " + appBarLayout.getTotalScrollRange());
+                if (appBarLayout.getTotalScrollRange() - Math.abs(verticalOffset) < height + 10) {
+                    //collapse
+                    linearSmallIcon.setEnabled(true);
 //                    collapsing.setScrimVisibleHeightTrigger(appBarLayout.getTotalScrollRange() - (height + 10));
-//                } else {
-//                    //expands
-//                    txtHeader.setVisibility(View.GONE);
-//                    imgBack.setColorFilter(ContextCompat.getColor(getApplicationContext(), R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
-//                    imgShare.setColorFilter(ContextCompat.getColor(getApplicationContext(), R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+                } else {
+                    //expands
+                    linearSmallIcon.setEnabled(false);
 //                    collapsing.setScrimVisibleHeightTrigger(5);
-//                }
+                }
             }
         });
     }
@@ -101,7 +100,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(HomeActivity.this, ExploreActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.imgCamera:
+            case R.id.imgNext:
                 Intent intent1 = new Intent(HomeActivity.this, CatchyCamera.class);
                 startActivity(intent1);
                 break;

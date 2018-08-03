@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="@color/colorScreenHome"
     tools:context=".startup.HomeActivity">
 
     <android.support.design.widget.CoordinatorLayout
@@ -21,7 +21,7 @@
             android:id="@+id/appBarParent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
+            android:background="@color/colorScreenHome"
             android:fitsSystemWindows="true"
             android:paddingBottom="5dp"
             android:paddingLeft="16dp"
@@ -33,6 +33,9 @@
                 android:id="@+id/collapsing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorScreenHome"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/colorScreenHome"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:statusBarScrim="@color/colorWhite">
 
@@ -40,6 +43,7 @@
                     android:id="@+id/constraintHeader"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorScreenHome"
                     android:layout_gravity="top"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp">
@@ -66,8 +70,9 @@
                             android:background="@android:color/transparent"
                             android:gravity="center_vertical"
                             android:singleLine="true"
+                            android:enabled="false"
                             android:text="Tìm kiếm"
-                            android:textColor="#808080"
+                            android:textColor="#61000000"
                             android:textSize="16dp" />
 
                         <ImageView
@@ -89,13 +94,6 @@
                         app:layout_constraintStart_toEndOf="@id/linearSearch"
                         app:layout_constraintTop_toTopOf="parent" />
                 </android.support.constraint.ConstraintLayout>
-
-                <View
-                    android:id="@+id/scrim"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0"
-                    android:background="@color/colorWhite" />
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
@@ -114,7 +112,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/paddding_general"
+                    android:layout_marginRight="@dimen/paddding_general"
                     android:layout_marginTop="5dp"
+                    android:weightSum="1"
                     android:orientation="horizontal">
 
                     <TextView
@@ -130,9 +130,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="DavidSon"
+                        android:layout_weight="1"
                         android:textColor="#DE000000"
                         android:textSize="24dp"
                         android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:id="@+id/linearSmallIcon"
+                        android:visibility="visible"
+                        android:alpha="0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_search_dark"
+                            android:layout_marginRight="20dp"/>
+                        <ImageView
+                            android:layout_width="21dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_notification_black"/>
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -363,7 +382,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="20dp">
+                    android:layout_marginBottom="25dp"
+                    android:nestedScrollingEnabled="false">
                 </android.support.v7.widget.RecyclerView>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
@@ -371,7 +391,7 @@
     </android.support.design.widget.CoordinatorLayout>
 
     <ImageView
-        android:id="@+id/imgCamera"
+        android:id="@+id/imgNext"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginBottom="8dp"

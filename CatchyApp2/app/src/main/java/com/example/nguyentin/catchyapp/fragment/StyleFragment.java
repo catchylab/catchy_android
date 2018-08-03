@@ -21,7 +21,6 @@ public class StyleFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_style, container, false);
         imgTest = (ImageView) view.findViewById(R.id.imgTest);
-        imgTest.setImageBitmap(OperateBitmap.getBitmap(getActivity().getString(R.string.test)));
         return view;
     }
 }

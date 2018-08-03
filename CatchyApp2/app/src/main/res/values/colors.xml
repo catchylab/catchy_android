@@ -14,6 +14,7 @@
     <color name="textHeader">#FFF</color>
     <color name="textColorGrayDark">#4D4D4D</color>
     <color name="textColorPinkLight">#FF4E50</color>
+    <color name="colorFacebook">#4B74B1</color>
     <!---->
 
     <!--Background Color -->
@@ -30,4 +31,7 @@
     <color name="ha_btn_bottom_left_end">#e680D9FF</color>
     <color name="ha_btn_bottom_right_start">#e66671E6</color>
     <color name="ha_btn_bottom_right_end">#e6B3B9FF</color>
+
+    <color name="color_background_crop">#61000000</color>
+    <color name="colorScreenHome">#ffffff</color>
 </resources>
