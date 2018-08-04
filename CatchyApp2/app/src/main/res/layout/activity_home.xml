@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorScreenHome"
+    android:id="@+id/constraintParent"
     tools:context=".startup.HomeActivity">
 
     <android.support.design.widget.CoordinatorLayout
@@ -104,6 +105,7 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
+                android:id="@+id/linearScroll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -378,11 +380,11 @@
                 </LinearLayout>
 
                 <android.support.v7.widget.RecyclerView
+                    android:visibility="visible"
                     android:id="@+id/recHotDeal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="25dp"
                     android:nestedScrollingEnabled="false">
                 </android.support.v7.widget.RecyclerView>
             </LinearLayout>

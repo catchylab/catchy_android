@@ -6,6 +6,6 @@
     </item>
 
     <!--normal-->
-    <item android:drawable="@drawable/ic_flash">
+    <item android:drawable="@drawable/ic_flash_off">
     </item>
 </selector>

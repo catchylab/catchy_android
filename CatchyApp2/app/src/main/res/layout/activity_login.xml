@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E5E5"
+    android:id="@+id/constraintParent"
     tools:context=".LoginActivity">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="280dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="16"
@@ -25,7 +26,7 @@
             android:layout_width="16dp"
             android:layout_height="16sp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="41dp"
             android:background="@drawable/ic_arrow_back"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -60,16 +61,16 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/linearLayout17"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_height="256dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/backgrond_circler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="wrap"
-        app:layout_constraintHeight_percent="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_min="wrap"
-        app:layout_constraintWidth_percent="0.9">
+        app:layout_constraintWidth_min="wrap">
 
         <LinearLayout
             android:id="@+id/linearLayout8"
@@ -84,10 +85,10 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txtHeaderEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="@string/su_email"
                 android:textColor="#8A000000"
                 android:textSize="12sp" />
 
@@ -100,11 +101,13 @@
                 android:background="@android:color/transparent"
                 android:drawablePadding="12dp"
                 android:gravity="center|left"
-                android:hint="Email"
+                android:hint="@string/su_email"
+                android:singleLine="true"
                 android:textColor="#000000"
                 android:textColorHint="#61000000" />
 
             <View
+                android:id="@+id/viewBottomEmail"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#6B000000" />
@@ -123,10 +126,10 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/txtHeaderPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mật khẩu"
+                android:text="@string/su_pass"
                 android:textColor="#8A000000"
                 android:textSize="12sp" />
 
@@ -147,20 +150,23 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:gravity="center|left"
-                    android:hint="Mật khẩu"
+                    android:hint="@string/su_pass"
                     android:inputType="textPassword"
                     android:singleLine="true"
                     android:textColor="#000000"
                     android:textColorHint="#61000000" />
 
-                <ImageView
+                <CheckBox
                     android:id="@+id/imgShowPass"
                     android:layout_width="24dp"
                     android:layout_height="15dp"
-                    android:src="@drawable/ic_show_pass" />
+                    android:button="@null"
+                    android:checked="false"
+                    android:background="@drawable/check_show_pass" />
             </LinearLayout>
 
             <View
+                android:id="@+id/viewBottomPass"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#6B000000" />
@@ -170,34 +176,33 @@
             android:id="@+id/txtLogIn"
             android:layout_width="280dp"
             android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginEnd="24dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
             android:background="@drawable/btn_start"
-            android:gravity="center"
             android:elevation="3dp"
+            android:gravity="center"
             android:text="@string/pl_sign_in"
             android:textAllCaps="true"
             android:textColor="@color/colorWhite"
             android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Quên thông tin tài khoản?"
+            android:text="@string/su_forgot_account"
             android:textColor="#8A000000"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtLogIn" />
+            app:layout_constraintStart_toStartOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

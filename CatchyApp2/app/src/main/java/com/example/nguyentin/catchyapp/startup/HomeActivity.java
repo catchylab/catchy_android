@@ -2,10 +2,14 @@ package com.example.nguyentin.catchyapp.startup;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,20 +28,25 @@ import com.example.nguyentin.catchyapp.ui.view.CatchyCamera;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener, AppBarLayout.OnOffsetChangedListener {
 
     RecyclerView recHotDeal;
     ArrayList<TestModel> list;
     FrameLayout btnExplore;
     ImageView imgCamera;
+    NestedScrollView nestedScroll;
 
     CoordinatorLayout coordinatorParent;
     AppBarLayout appBarParent;
     CollapsingToolbarLayout collapsing;
-    LinearLayout linearSmallIcon;
+    LinearLayout linearSmallIcon, linearScroll;
+    ConstraintLayout constraintParent;
 
     // Var
     int height;
+    int linearHeight;
+    int parentHeight;
+    int cameraHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,32 +74,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         recHotDeal = (RecyclerView) findViewById(R.id.recHotDeal);
         btnExplore = (FrameLayout) findViewById(R.id.btnExplore);
         imgCamera = (ImageView) findViewById(R.id.imgNext);
+        nestedScroll = (NestedScrollView) findViewById(R.id.nestedScroll);
 
         coordinatorParent = (CoordinatorLayout) findViewById(R.id.coordinatorParent);
         appBarParent = (AppBarLayout) findViewById(R.id.appBarParent);
         collapsing = (CollapsingToolbarLayout) findViewById(R.id.collapsing);
-        linearSmallIcon = (LinearLayout) findViewById(R.id.linearSmallIcon);
+
+        linearSmallIcon  = (LinearLayout) findViewById(R.id.linearSmallIcon);
+        linearScroll     = (LinearLayout) findViewById(R.id.linearScroll);
+
+        constraintParent = (ConstraintLayout) findViewById(R.id.constraintParent);
 
         height = appBarParent.getHeight();
 
-        appBarParent.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                float offsetAlpha = (appBarLayout.getY() / appBarLayout.getTotalScrollRange());
-                Log.d("TTTT", offsetAlpha + "");
-                linearSmallIcon.setAlpha(offsetAlpha * (-1));
-                Log.d("ddd", verticalOffset + " " + appBarLayout.getTotalScrollRange());
-                if (appBarLayout.getTotalScrollRange() - Math.abs(verticalOffset) < height + 10) {
-                    //collapse
-                    linearSmallIcon.setEnabled(true);
-//                    collapsing.setScrimVisibleHeightTrigger(appBarLayout.getTotalScrollRange() - (height + 10));
-                } else {
-                    //expands
-                    linearSmallIcon.setEnabled(false);
-//                    collapsing.setScrimVisibleHeightTrigger(5);
-                }
-            }
-        });
+        appBarParent.addOnOffsetChangedListener(this);
+
     }
 
     @Override
@@ -104,6 +102,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent1 = new Intent(HomeActivity.this, CatchyCamera.class);
                 startActivity(intent1);
                 break;
+        }
+    }
+
+    @Override
+    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+        float offsetAlpha = (appBarLayout.getY() / appBarLayout.getTotalScrollRange());
+        linearSmallIcon.setAlpha(offsetAlpha * (-1));
+        if (appBarLayout.getTotalScrollRange() - Math.abs(verticalOffset) < height + 10) {
+            //collapse
+            linearSmallIcon.setEnabled(true);
+//                    collapsing.setScrimVisibleHeightTrigger(appBarLayout.getTotalScrollRange() - (height + 10));
+        } else {
+            //expands
+            linearSmallIcon.setEnabled(false);
+//                    collapsing.setScrimVisibleHeightTrigger(5);
         }
     }
 }

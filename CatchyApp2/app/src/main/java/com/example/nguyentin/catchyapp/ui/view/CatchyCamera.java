@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.hardware.Camera;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
@@ -151,11 +152,15 @@ public class CatchyCamera extends Activity implements View.OnClickListener, Came
         int height = bgCropView.getHeight();
 
         Bitmap originBitmap = OperateBitmap.getBitmap(bytes);
-        Bitmap rotateBitmap = OperateBitmap.rotate(originBitmap, 90);
+        Bitmap rotateBitmap = originBitmap;
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+            rotateBitmap = OperateBitmap.rotate(originBitmap, 90);
+        }
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(rotateBitmap, width, height, true);
         Bitmap cropBitmap   = Bitmap.createBitmap(scaledBitmap, bgCropView.getXCrop(), bgCropView.getYCrop(), bgCropView.getSide(), bgCropView.getSide());
         if (checkChangeCamera.isChecked()){
             cropBitmap = OperateBitmap.flip(cropBitmap, OperateBitmap.VERTICAL);
+            cropBitmap = OperateBitmap.flip(cropBitmap, OperateBitmap.HORIZONTAL);
         }
 
         return cropBitmap;

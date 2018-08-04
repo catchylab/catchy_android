@@ -29,12 +29,14 @@
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="face" />
 
-        <activity android:name=".startup.HomeActivity"></activity>
+        <activity android:name=".startup.HomeActivity" />
         <activity android:name=".NavSignInOrSignUpActivity" />
-        <activity android:name=".LoginActivity"
-            android:noHistory="true"></activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignUp2Activity" />
+        <activity
+            android:name=".LoginActivity"
+            android:noHistory="true"
+            android:theme="@style/PreLoginTheme" />
+        <activity android:name=".activity.SignUpActivity"
+            android:theme="@style/PreLoginTheme"/>
 
         <meta-data
             android:name="preloaded_fonts"
@@ -56,9 +58,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.IntroActivity" />
-        <activity android:name=".activity.PreLoginActivity"
-            android:theme="@style/PreLoginTheme"
-            android:noHistory="true"></activity>
+        <activity
+            android:name=".activity.PreLoginActivity"
+            android:noHistory="true"
+            android:theme="@style/PreLoginTheme" />
+        <activity android:name=".activity.WelcomeActivity"
+            android:noHistory="true"
+            android:theme="@style/PreLoginTheme"></activity>
     </application>
 
 </manifest>

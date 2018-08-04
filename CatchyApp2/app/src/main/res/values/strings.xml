@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">CatchyApp</string>
-    <string name="header_register_1">Đăng Ký \n1/2</string>
+    <string name="header_register">Đăng ký</string>
     <string name="header_login">Đăng nhập</string>
-    <string name="header_register_2">Đăng Ký \n2/2</string>
     <string name="string_accept_rules">Bạn đồng ý với các điều khoản bảo mật</string>
 
     <!--Activity Main Languge-->
@@ -50,4 +49,20 @@
     <string name="pl_sign_in">\u0020Đăng nhập</string>
     <string name="pl_lang_vn">Tiếng Việt</string>
     <string name="pl_lang_en">English</string>
+    
+    <string name="we_content">Hãy chọn ít nhất 3 phong cách để Catchy gợi ý bạn tốt hơn nhé</string>
+    <string name="we_hello">Xin chào</string>
+    <string name="we_next">Tiếp tục</string>
+
+    <string name="su_create_account">Tạo tài khoản</string>
+    <string name="su_email">Email</string>
+    <string name="su_email_register">Email đăng ký</string>
+    <string name="su_pass">Mật khẩu</string>
+    <string name="su_forgot_account">Quên thông tin tài khoản?</string>
+    <string name="su_lastname">Họ</string>
+    <string name="su_firstname">Tên</string>
+    <string name="su_birth_year">Năm sinh</string>
+    <string name="su_gender">Giới tính</string>
+    <string name="su_female">Nữ</string>
+    <string name="su_male">Nam</string>
 </resources>
