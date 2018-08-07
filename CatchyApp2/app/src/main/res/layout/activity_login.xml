@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E5E5E5"
     android:id="@+id/constraintParent"
-    tools:context=".LoginActivity">
+    tools:context=".activity.LoginActivity">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/linearLayout7"
@@ -180,7 +180,6 @@
             android:layout_marginEnd="24dp"
             android:layout_marginStart="24dp"
             android:background="@drawable/btn_start"
-            android:elevation="3dp"
             android:gravity="center"
             android:text="@string/pl_sign_in"
             android:textAllCaps="true"

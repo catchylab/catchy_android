@@ -7,16 +7,34 @@
     android:background="#E5E5E5"
     tools:context=".activity.SignUpActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <View
         android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
         android:layout_height="280dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="16"
         android:background="@drawable/bg_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </View>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recForm"
+        android:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -53,20 +71,6 @@
             app:layout_constraintStart_toEndOf="@+id/imgBack"
             app:layout_constraintTop_toTopOf="@+id/imgBack"
             app:layout_constraintWidth_percent="1" />
-
     </android.support.constraint.ConstraintLayout>
-
-
-    <android.support.v4.view.ViewPager
-        android:layout_width="0dp"
-        android:layout_height="256dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_min="wrap"
-        app:layout_constraintHeight_percent="0.43"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_min="wrap"
-        app:layout_constraintWidth_percent="0.9"></android.support.v4.view.ViewPager>
 
 </android.support.constraint.ConstraintLayout>

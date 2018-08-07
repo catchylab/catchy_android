@@ -4,15 +4,12 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RadioGroup;
 
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.adapter.IntroPagerAdapter;
-import com.example.nguyentin.catchyapp.startup.HomeActivity;
-import com.example.nguyentin.catchyapp.util.AppSharedPreferences;
 
 public class IntroActivity extends AppCompatActivity {
     ViewPager viewPager;

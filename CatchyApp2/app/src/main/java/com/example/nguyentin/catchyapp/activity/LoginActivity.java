@@ -1,4 +1,4 @@
-package com.example.nguyentin.catchyapp;
+package com.example.nguyentin.catchyapp.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,18 +8,14 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.SingleLineTransformationMethod;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.nguyentin.catchyapp.activity.PreLoginActivity;
-import com.example.nguyentin.catchyapp.activity.WelcomeActivity;
-import com.example.nguyentin.catchyapp.startup.HomeActivity;
+import com.example.nguyentin.catchyapp.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 

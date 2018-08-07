@@ -1,10 +1,8 @@
-package com.example.nguyentin.catchyapp.startup;
+package com.example.nguyentin.catchyapp.activity;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -13,7 +11,6 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -21,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.nguyentin.catchyapp.R;
-import com.example.nguyentin.catchyapp.activity.ExploreActivity;
 import com.example.nguyentin.catchyapp.adapter.TestAdapter;
 import com.example.nguyentin.catchyapp.model.TestModel;
 import com.example.nguyentin.catchyapp.ui.view.CatchyCamera;

@@ -16,12 +16,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.nguyentin.catchyapp.MainActivity;
+
 import com.example.nguyentin.catchyapp.R;
-import com.example.nguyentin.catchyapp.camera.CropImageActivity;
-import com.example.nguyentin.catchyapp.ui.view.CropView;
-import com.example.nguyentin.catchyapp.util.OperateBitmap;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.UnsupportedEncodingException;
 

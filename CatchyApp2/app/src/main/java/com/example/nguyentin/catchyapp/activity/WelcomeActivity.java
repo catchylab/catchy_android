@@ -11,7 +11,6 @@ import android.widget.FrameLayout;
 
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.adapter.WelcomeStyleAdapter;
-import com.example.nguyentin.catchyapp.startup.HomeActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
     // View

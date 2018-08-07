@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.nguyentin.catchyapp.R;
-import com.example.nguyentin.catchyapp.startup.HomeActivity;
 import com.example.nguyentin.catchyapp.util.AppSharedPreferences;
 
 public class SplashScreenActivity extends AppCompatActivity {

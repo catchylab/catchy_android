@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.nguyentin.catchyapp.activity.LoginActivity;
 import com.example.nguyentin.catchyapp.activity.SignUpActivity;
 
 public class NavSignInOrSignUpActivity extends AppCompatActivity {

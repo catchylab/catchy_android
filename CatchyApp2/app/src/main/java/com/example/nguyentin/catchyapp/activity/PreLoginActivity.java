@@ -4,15 +4,12 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.example.nguyentin.catchyapp.LoginActivity;
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.util.AppSharedPreferences;
 
@@ -95,6 +92,7 @@ public class PreLoginActivity extends AppCompatActivity implements CompoundButto
             case R.id.txtFacebook:
                 break;
             case R.id.txtSignUp:
+                gotoSignUp();
                 break;
             case R.id.linearSignIn:
                 if (rdbVn.isChecked()){
@@ -113,6 +111,11 @@ public class PreLoginActivity extends AppCompatActivity implements CompoundButto
 
     private void gotoSignIn(){
         Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    private void gotoSignUp(){
+        Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
 }

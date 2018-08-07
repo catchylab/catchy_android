@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorScreenHome"
     android:id="@+id/constraintParent"
-    tools:context=".startup.HomeActivity">
+    tools:context=".activity.HomeActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorParent"
