@@ -1,4 +1,4 @@
-package com.example.nguyentin.catchyapp.fragment.SignUp;
+package com.example.nguyentin.catchyapp.fragment.home;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,19 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.nguyentin.catchyapp.R;
-
-/**
- * Create by DavidSon Nguyen
- */
-
-public class UserInfoFragment extends Fragment {
-    View view;
-
+public class UserFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_sign_up_user_info, container, false);
-        return view;
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 }

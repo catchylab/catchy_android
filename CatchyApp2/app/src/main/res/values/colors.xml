@@ -41,4 +41,6 @@
     <color name="colorEditting">#2C98F0</color>
     <color name="colorWrong">#DEFF1744</color>
     <color name="colorEditNormal">#8A000000</color>
+
+    <color name="colorUncheck">#61000000</color>
 </resources>

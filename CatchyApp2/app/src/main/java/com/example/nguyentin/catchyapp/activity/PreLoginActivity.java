@@ -1,6 +1,5 @@
 package com.example.nguyentin.catchyapp.activity;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +12,7 @@ import com.example.nguyentin.catchyapp.CatchyApplication;
 import com.example.nguyentin.catchyapp.Constant.Constant;
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.util.ActivityUtil;
-import com.example.nguyentin.catchyapp.util.AppSharedPrefs;
+import com.example.nguyentin.catchyapp.util.SharedPrefsUtil;
 
 /**
  * Create by DavidSon Nguyen
@@ -37,7 +36,7 @@ public class PreLoginActivity extends AppCompatActivity implements CompoundButto
         txtSignUp.setOnClickListener(this);
         linearSignIn.setOnClickListener(this);
 
-        if (AppSharedPrefs.getInstance().getLanguage().equals("vi")){
+        if (SharedPrefsUtil.getInstance().getLanguage().equals("vi")){
             rdbVn.setChecked(true);
         }else {
             rdbEn.setChecked(true);
@@ -90,12 +89,12 @@ public class PreLoginActivity extends AppCompatActivity implements CompoundButto
                 break;
             case R.id.linearSignIn:
                 if (rdbVn.isChecked()){
-                    AppSharedPrefs.getInstance().setLanguage(Constant.LANG_VIETNAM);
+                    SharedPrefsUtil.getInstance().setLanguage(Constant.LANG_VIETNAM);
                     CatchyApplication.setLanguageConfig(Constant.LANG_VIETNAM);
                 }
 
                 if (rdbEn.isChecked()){
-                    AppSharedPrefs.getInstance().setLanguage(Constant.LANG_ENGLISH);
+                    SharedPrefsUtil.getInstance().setLanguage(Constant.LANG_ENGLISH);
                     CatchyApplication.setLanguageConfig(Constant.LANG_ENGLISH);
                 }
                 ActivityUtil.launchActivity(this, LoginActivity.class);

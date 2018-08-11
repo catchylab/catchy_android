@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.nguyentin.catchyapp.R;
-import com.example.nguyentin.catchyapp.util.AppSharedPrefs;
+import com.example.nguyentin.catchyapp.util.SharedPrefsUtil;
 
 /**
  * Create by DavidSon Nguyen
@@ -17,13 +17,13 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        if (AppSharedPrefs.getInstance().getFirstLaunch()){
+        if (SharedPrefsUtil.getInstance().getFirstLaunch()){
             // first launch
-            AppSharedPrefs.getInstance().setFirstLaunch();
+            SharedPrefsUtil.getInstance().setFirstLaunch();
             gotoIntroActivity();
         }else {
             // second launch
-            if (AppSharedPrefs.getInstance().getUserToken().equals("")){
+            if (SharedPrefsUtil.getInstance().getUserToken().equals("")){
                 // not sign in
                 gotoNextActivity();
             }else {
@@ -33,7 +33,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     public void gotoHomeActivity(){
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }

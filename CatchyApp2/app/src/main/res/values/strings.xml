@@ -4,6 +4,9 @@
     <string name="header_login">Đăng nhập</string>
     <string name="string_accept_rules">Bạn đồng ý với các điều khoản bảo mật</string>
 
+    <string name="main_home">Trang chủ</string>
+    <string name="main_user">Cá nhân</string>
+
     <!--Activity Main Languge-->
     <string name="introduce">Vui lòng chọn ngôn ngữ</string>
     <string name="langue_english">English</string>

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.res.Configuration;
 
 import com.example.nguyentin.catchyapp.server.CatchyApi;
-import com.example.nguyentin.catchyapp.util.AppSharedPrefs;
+import com.example.nguyentin.catchyapp.util.SharedPrefsUtil;
 
 import java.util.Locale;
 
@@ -20,7 +20,7 @@ public class CatchyApplication extends Application {
         super.onCreate();
         instance = this;
         CatchyApi.initAPI();
-        setLanguageConfig(AppSharedPrefs.getInstance().getLanguage());
+        setLanguageConfig(SharedPrefsUtil.getInstance().getLanguage());
     }
 
     public static CatchyApplication getInstance(){
