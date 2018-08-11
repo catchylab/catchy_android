@@ -10,14 +10,18 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.nguyentin.catchyapp.R;
-import com.example.nguyentin.catchyapp.adapter.WelcomeStyleAdapter;
+import com.example.nguyentin.catchyapp.adapter.StylistAdapter;
+
+/**
+ * Create by DavidSon Nguyen
+ */
 
 public class WelcomeActivity extends AppCompatActivity {
     // View
     private RecyclerView recWelcomeStyle;
     private FrameLayout frameNext;
 
-    private WelcomeStyleAdapter adapter;
+    private StylistAdapter adapter;
     private GridLayoutManager layoutManager;
 
     @Override
@@ -29,7 +33,7 @@ public class WelcomeActivity extends AppCompatActivity {
         layoutManager = new GridLayoutManager(this, 2);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        adapter = new WelcomeStyleAdapter(this);
+        adapter = new StylistAdapter(this, StylistAdapter.MULTI_CHECK);
 
         recWelcomeStyle.setLayoutManager(layoutManager);
         recWelcomeStyle.setAdapter(adapter);

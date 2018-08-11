@@ -12,19 +12,27 @@ import android.widget.TextView;
 
 import com.example.nguyentin.catchyapp.R;
 
-import org.w3c.dom.Text;
+/**
+ * Create by DavidSon Nguyen
+ */
 
-public class WelcomeStyleAdapter extends RecyclerView.Adapter<WelcomeStyleAdapter.ViewHolder> {
+public class StylistAdapter extends RecyclerView.Adapter<StylistAdapter.ViewHolder> {
+
+    public static final int MULTI_CHECK = 1;
+    public static final int CLICK = 0;
+
     private Context context;
+    private int flag;
 
-    public WelcomeStyleAdapter(Context context) {
+    public StylistAdapter(Context context, int flagAction) {
         this.context = context;
+        this.flag = flagAction;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_welcome_style, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_stylist, null);
         return new ViewHolder(view);
     }
 
@@ -50,6 +58,7 @@ public class WelcomeStyleAdapter extends RecyclerView.Adapter<WelcomeStyleAdapte
         private ImageView imgBackground;
         private TextView txtStyleName;
         private CheckBox cbSelect;
+        private View viewNormal, viewSelected;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -58,12 +67,37 @@ public class WelcomeStyleAdapter extends RecyclerView.Adapter<WelcomeStyleAdapte
 
             txtStyleName = (TextView) itemView.findViewById(R.id.txtStyleName);
 
+            viewNormal   = (View) itemView.findViewById(R.id.viewNormal);
+            viewSelected = (View) itemView.findViewById(R.id.viewSelected);
+
             itemView.setOnClickListener(this);
+
+            switch (flag){
+                case MULTI_CHECK:
+                    cbSelect.setVisibility(View.VISIBLE);
+                    break;
+                case CLICK:
+                    cbSelect.setVisibility(View.GONE);
+                    break;
+            }
         }
 
         @Override
         public void onClick(View view) {
-            cbSelect.setChecked(!cbSelect.isChecked());
+            switch (flag){
+                case MULTI_CHECK:
+                    cbSelect.setChecked(!cbSelect.isChecked());
+                    if (cbSelect.isChecked()){
+                        viewNormal.setVisibility(View.GONE);
+                        viewSelected.setVisibility(View.VISIBLE);
+                    }else {
+                        viewNormal.setVisibility(View.VISIBLE);
+                        viewSelected.setVisibility(View.GONE);
+                    }
+                    break;
+                case CLICK:
+                    break;
+            }
         }
     }
 }

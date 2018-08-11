@@ -16,6 +16,10 @@ import android.widget.ImageView;
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.activity.IntroActivity;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class Intro2Fragment extends Fragment {
     View view;
     ImageView imgNext;

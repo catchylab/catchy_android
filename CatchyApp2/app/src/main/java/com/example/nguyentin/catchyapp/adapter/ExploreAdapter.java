@@ -10,6 +10,10 @@ import com.example.nguyentin.catchyapp.fragment.SeenFragment;
 import com.example.nguyentin.catchyapp.fragment.StyleFragment;
 import com.example.nguyentin.catchyapp.fragment.TrendFragment;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class ExploreAdapter extends FragmentPagerAdapter {
     private final int TOTAL_TAB = 3;
 

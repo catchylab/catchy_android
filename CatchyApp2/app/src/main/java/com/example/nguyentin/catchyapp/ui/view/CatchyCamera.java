@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.hardware.Camera;
@@ -13,8 +14,6 @@ import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -25,12 +24,11 @@ import android.widget.Toast;
 
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.dialog.PreviewImageDialog;
-import com.example.nguyentin.catchyapp.util.OperateBitmap;
+import com.example.nguyentin.catchyapp.control.OperateBitmap;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+/**
+ * Create by DavidSon Nguyen
+ */
 
 public class CatchyCamera extends Activity implements View.OnClickListener, Camera.PictureCallback {
     RelativeLayout bgPreview;
@@ -44,6 +42,11 @@ public class CatchyCamera extends Activity implements View.OnClickListener, Came
 
     private int REQUEST_CODE = 1539;
     private boolean cameraFront = false;
+
+    public static final void openCamera(Activity activity){
+        Intent intent = new Intent(activity, CatchyCamera.class);
+        activity.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

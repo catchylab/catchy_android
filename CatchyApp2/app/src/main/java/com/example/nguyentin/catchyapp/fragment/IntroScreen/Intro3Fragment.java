@@ -12,6 +12,10 @@ import android.widget.TextView;
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.activity.IntroActivity;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class Intro3Fragment extends Fragment {
     View view;
     TextView txtStart;

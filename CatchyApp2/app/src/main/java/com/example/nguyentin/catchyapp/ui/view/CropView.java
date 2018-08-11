@@ -19,6 +19,10 @@ import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 @SuppressLint("AppCompatCustomView")
 public class CropView extends View {
 

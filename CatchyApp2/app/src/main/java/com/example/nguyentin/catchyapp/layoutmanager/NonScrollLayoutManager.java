@@ -4,6 +4,10 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.AttributeSet;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class NonScrollLayoutManager extends LinearLayoutManager {
     public NonScrollLayoutManager(Context context) {
         super(context);

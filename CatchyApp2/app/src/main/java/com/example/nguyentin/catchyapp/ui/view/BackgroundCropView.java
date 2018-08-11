@@ -11,6 +11,10 @@ import android.widget.LinearLayout;
 
 import com.example.nguyentin.catchyapp.R;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class BackgroundCropView extends LinearLayout {
     // Constructor
     private Context context;

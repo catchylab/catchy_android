@@ -18,6 +18,10 @@ import android.widget.TextView;
 
 import com.example.nguyentin.catchyapp.R;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class EmailPassFragment extends Fragment implements View.OnFocusChangeListener, View.OnClickListener {
     View view;
     TextView txtHeaderEmail, txtHeaderPass, txtBottomEmail, txtBottomPass, txtNext;

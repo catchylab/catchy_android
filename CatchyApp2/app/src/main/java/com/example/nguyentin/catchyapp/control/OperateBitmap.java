@@ -1,4 +1,4 @@
-package com.example.nguyentin.catchyapp.util;
+package com.example.nguyentin.catchyapp.control;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

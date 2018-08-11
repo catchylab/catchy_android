@@ -41,7 +41,7 @@
             android:paddingRight="14dp"
             android:weightSum="1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imgNext"
+            app:layout_constraintEnd_toStartOf="@+id/imgCamera"
             app:layout_constraintStart_toEndOf="@+id/imgBack"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
@@ -68,7 +68,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/imgNext"
+            android:id="@+id/imgCamera"
             android:layout_width="30dp"
             android:layout_height="25dp"
             android:layout_marginEnd="20dp"

@@ -17,6 +17,10 @@ import android.widget.TextView;
 
 import com.example.nguyentin.catchyapp.R;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 
     TextView txtSignIn, txtHeaderEmail, txtHeaderPass;

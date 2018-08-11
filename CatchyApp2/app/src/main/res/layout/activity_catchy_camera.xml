@@ -86,12 +86,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
-            android:id="@+id/imgCapture"
+        <FrameLayout
             android:layout_width="72dp"
             android:layout_height="72dp"
-            android:layout_marginBottom="7dp"
-            android:src="@drawable/capture_button" />
+            android:layout_marginBottom="7dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/capture_button" />
+            <ImageView
+                android:id="@+id/imgCapture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/capture_button_inside"
+                android:padding="6dp"/>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/txtFind"

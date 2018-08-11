@@ -15,6 +15,10 @@ import android.widget.ImageView;
 
 import com.example.nguyentin.catchyapp.R;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 @SuppressLint("AppCompatCustomView")
 public class RoundedImageView extends ImageView {
     private Path mMaskPath;

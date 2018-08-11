@@ -18,10 +18,19 @@
             android:src="@drawable/album2"/>
 
         <View
+            android:id="@+id/viewNormal"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_gravity="bottom"
             android:background="@drawable/bg_content_gradient"/>
+
+        <View
+            android:id="@+id/viewSelected"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_dark_select_item"/>
+
         <TextView
             android:id="@+id/txtStyleName"
             android:layout_width="match_parent"

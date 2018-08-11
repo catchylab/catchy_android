@@ -5,6 +5,10 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class CatchyApi {
     private static OkHttpClient okHttpClient = null;
     private static Retrofit.Builder retrofitBuilder = null;

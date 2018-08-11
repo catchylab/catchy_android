@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.nguyentin.catchyapp.R;
-import com.example.nguyentin.catchyapp.util.OperateBitmap;
+
+/**
+ * Create by DavidSon Nguyen
+ */
 
 public class StyleFragment extends Fragment {
     // View

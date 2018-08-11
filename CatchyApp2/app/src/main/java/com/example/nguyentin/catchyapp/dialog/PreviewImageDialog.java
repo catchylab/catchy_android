@@ -21,6 +21,10 @@ import com.example.nguyentin.catchyapp.R;
 
 import java.io.UnsupportedEncodingException;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class PreviewImageDialog extends Dialog implements View.OnClickListener {
     // Constructor
     private Bitmap bitmap;

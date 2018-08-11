@@ -2,31 +2,36 @@ package com.example.nguyentin.catchyapp;
 
 import android.app.Application;
 import android.content.res.Configuration;
-import android.graphics.BitmapFactory;
-import android.util.Log;
 
 import com.example.nguyentin.catchyapp.server.CatchyApi;
-import com.example.nguyentin.catchyapp.util.AppSharedPreferences;
-import com.example.nguyentin.catchyapp.util.OperateBitmap;
+import com.example.nguyentin.catchyapp.util.AppSharedPrefs;
 
 import java.util.Locale;
 
-import okhttp3.RequestBody;
+/**
+ * Create by DavidSon Nguyen
+ */
 
 public class CatchyApplication extends Application {
+    private static CatchyApplication instance;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        AppSharedPreferences appSharedPreferences = new AppSharedPreferences(this);
+        instance = this;
         CatchyApi.initAPI();
-        changeLanguageConfig(appSharedPreferences.getLanguage());
+        setLanguageConfig(AppSharedPrefs.getInstance().getLanguage());
     }
 
-    private void changeLanguageConfig(String lang){
+    public static CatchyApplication getInstance(){
+        return instance;
+    }
+
+    public static void setLanguageConfig(String lang){
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        instance.getBaseContext().getResources().updateConfiguration(config, instance.getBaseContext().getResources().getDisplayMetrics());
     }
 }

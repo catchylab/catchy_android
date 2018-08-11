@@ -10,6 +10,10 @@ import android.view.ViewGroup;
 
 import com.example.nguyentin.catchyapp.R;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class UserInfoFragment extends Fragment {
     View view;
 

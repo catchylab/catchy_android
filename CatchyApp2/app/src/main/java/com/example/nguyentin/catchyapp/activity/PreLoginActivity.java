@@ -1,7 +1,6 @@
 package com.example.nguyentin.catchyapp.activity;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,24 +9,27 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.example.nguyentin.catchyapp.CatchyApplication;
+import com.example.nguyentin.catchyapp.Constant.Constant;
 import com.example.nguyentin.catchyapp.R;
-import com.example.nguyentin.catchyapp.util.AppSharedPreferences;
+import com.example.nguyentin.catchyapp.util.ActivityUtil;
+import com.example.nguyentin.catchyapp.util.AppSharedPrefs;
 
-import java.util.Locale;
+/**
+ * Create by DavidSon Nguyen
+ */
 
 public class PreLoginActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     TextView txtFacebook, txtSignUp;
     LinearLayout linearSignIn;
     RadioButton rdbVn, rdbEn;
     View lineVN, lineEN;
-    AppSharedPreferences appSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_login);
         initView();
-        appSharedPreferences = new AppSharedPreferences(this);
         rdbVn.setOnCheckedChangeListener(this);
         rdbEn.setOnCheckedChangeListener(this);
 
@@ -35,7 +37,7 @@ public class PreLoginActivity extends AppCompatActivity implements CompoundButto
         txtSignUp.setOnClickListener(this);
         linearSignIn.setOnClickListener(this);
 
-        if (appSharedPreferences.getLanguage().equals("vi")){
+        if (AppSharedPrefs.getInstance().getLanguage().equals("vi")){
             rdbVn.setChecked(true);
         }else {
             rdbEn.setChecked(true);
@@ -78,44 +80,26 @@ public class PreLoginActivity extends AppCompatActivity implements CompoundButto
         }
     }
 
-    private void changeLanguageConfig(String lang){
-        Locale locale = new Locale(lang);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.txtFacebook:
                 break;
             case R.id.txtSignUp:
-                gotoSignUp();
+                ActivityUtil.launchActivity(this, SignUpActivity.class);
                 break;
             case R.id.linearSignIn:
                 if (rdbVn.isChecked()){
-                    appSharedPreferences.setLanguage("vi");
-                    changeLanguageConfig("vi");
+                    AppSharedPrefs.getInstance().setLanguage(Constant.LANG_VIETNAM);
+                    CatchyApplication.setLanguageConfig(Constant.LANG_VIETNAM);
                 }
 
                 if (rdbEn.isChecked()){
-                    appSharedPreferences.setLanguage("en");
-                    changeLanguageConfig("en");
+                    AppSharedPrefs.getInstance().setLanguage(Constant.LANG_ENGLISH);
+                    CatchyApplication.setLanguageConfig(Constant.LANG_ENGLISH);
                 }
-                gotoSignIn();
+                ActivityUtil.launchActivity(this, LoginActivity.class);
                 break;
         }
-    }
-
-    private void gotoSignIn(){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }
-
-    private void gotoSignUp(){
-        Intent intent = new Intent(this, SignUpActivity.class);
-        startActivity(intent);
     }
 }

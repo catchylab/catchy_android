@@ -24,6 +24,10 @@ import com.example.nguyentin.catchyapp.ui.view.CatchyCamera;
 
 import java.util.ArrayList;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, AppBarLayout.OnOffsetChangedListener {
 
     RecyclerView recHotDeal;
@@ -40,15 +44,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     // Var
     int height;
-    int linearHeight;
-    int parentHeight;
-    int cameraHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        setContentView(R.layout.activity_home);
         initView();
 
         list = new ArrayList<>();
@@ -69,7 +70,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void initView(){
         recHotDeal = (RecyclerView) findViewById(R.id.recHotDeal);
         btnExplore = (FrameLayout) findViewById(R.id.btnExplore);
-        imgCamera = (ImageView) findViewById(R.id.imgNext);
+        imgCamera = (ImageView) findViewById(R.id.imgCamera);
         nestedScroll = (NestedScrollView) findViewById(R.id.nestedScroll);
 
         coordinatorParent = (CoordinatorLayout) findViewById(R.id.coordinatorParent);
@@ -94,9 +95,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(HomeActivity.this, ExploreActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.imgNext:
-                Intent intent1 = new Intent(HomeActivity.this, CatchyCamera.class);
-                startActivity(intent1);
+            case R.id.imgCamera:
+                CatchyCamera.openCamera(this);
                 break;
         }
     }

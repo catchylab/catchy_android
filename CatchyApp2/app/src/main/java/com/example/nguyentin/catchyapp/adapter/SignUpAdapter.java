@@ -23,6 +23,10 @@ import com.example.nguyentin.catchyapp.activity.SignUpActivity;
 import com.example.nguyentin.catchyapp.communication.OnYearPickerResult;
 import com.example.nguyentin.catchyapp.dialog.YearPickerDialog;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class SignUpAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Activity activity;
 

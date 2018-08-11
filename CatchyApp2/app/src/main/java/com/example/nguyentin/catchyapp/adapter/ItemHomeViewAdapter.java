@@ -12,6 +12,10 @@ import com.example.nguyentin.catchyapp.model.ItemObjects;
 
 import java.util.List;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class ItemHomeViewAdapter extends RecyclerView.Adapter<ItemHomeViewHolders> {
 
     private List<ItemObjects> itemList;

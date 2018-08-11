@@ -10,6 +10,9 @@ import android.widget.RadioGroup;
 
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.adapter.IntroPagerAdapter;
+/**
+ * Create by DavidSon Nguyen
+ */
 
 public class IntroActivity extends AppCompatActivity {
     ViewPager viewPager;

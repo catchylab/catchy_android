@@ -21,13 +21,13 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recForm"
-        android:elevation="0dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:elevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTerms"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </android.support.v7.widget.RecyclerView>
+        app:layout_constraintTop_toTopOf="parent"></android.support.v7.widget.RecyclerView>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="wrap_content"
@@ -72,5 +72,18 @@
             app:layout_constraintTop_toTopOf="@+id/imgBack"
             app:layout_constraintWidth_percent="1" />
     </android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/txtTerms"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/su_terms"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

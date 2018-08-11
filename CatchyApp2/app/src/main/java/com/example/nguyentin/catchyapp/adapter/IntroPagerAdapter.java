@@ -8,6 +8,10 @@ import com.example.nguyentin.catchyapp.fragment.IntroScreen.Intro1Fragment;
 import com.example.nguyentin.catchyapp.fragment.IntroScreen.Intro2Fragment;
 import com.example.nguyentin.catchyapp.fragment.IntroScreen.Intro3Fragment;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class IntroPagerAdapter extends FragmentPagerAdapter {
     public IntroPagerAdapter(FragmentManager fm) {
         super(fm);

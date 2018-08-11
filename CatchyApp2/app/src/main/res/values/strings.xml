@@ -65,4 +65,5 @@
     <string name="su_gender">Giới tính</string>
     <string name="su_female">Nữ</string>
     <string name="su_male">Nam</string>
+    <string name="su_terms">Bạn đã xác nhận đồng ý với các chính sách và điều khoản bảo mật. <b>Chi tiết</b></string>
 </resources>

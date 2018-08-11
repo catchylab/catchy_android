@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
-
     <item>
         <shape android:shape="oval">
-            <solid android:color="@color/colorWhite"/>
+            <solid android:color="#FF4E50"/>
+            <gradient android:startColor="#FF4E50"
+                android:endColor="#F2709C"/>
         </shape>
     </item>
 
     <item>
-        <inset android:drawable="@drawable/ic_heart_love"
-            android:inset="6dp"/>
+        <inset android:drawable="@drawable/ic_heart_white"
+            android:inset="4.5dp"/>
     </item>
-
-
-
 </layer-list>

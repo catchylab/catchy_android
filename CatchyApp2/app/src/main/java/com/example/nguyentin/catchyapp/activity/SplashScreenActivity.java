@@ -5,7 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.nguyentin.catchyapp.R;
-import com.example.nguyentin.catchyapp.util.AppSharedPreferences;
+import com.example.nguyentin.catchyapp.util.AppSharedPrefs;
+
+/**
+ * Create by DavidSon Nguyen
+ */
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -13,14 +17,13 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        AppSharedPreferences appSharedPreferences = new AppSharedPreferences(this);
-        if (appSharedPreferences.getFirstLaunch()){
+        if (AppSharedPrefs.getInstance().getFirstLaunch()){
             // first launch
-            appSharedPreferences.setFirstLaunch();
+            AppSharedPrefs.getInstance().setFirstLaunch();
             gotoIntroActivity();
         }else {
             // second launch
-            if (appSharedPreferences.getUserToken().equals("")){
+            if (AppSharedPrefs.getInstance().getUserToken().equals("")){
                 // not sign in
                 gotoNextActivity();
             }else {

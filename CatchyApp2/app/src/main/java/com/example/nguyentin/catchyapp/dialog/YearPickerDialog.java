@@ -15,6 +15,10 @@ import com.example.nguyentin.catchyapp.adapter.YearPickerAdapter;
 import com.example.nguyentin.catchyapp.communication.OnItemClickListener;
 import com.example.nguyentin.catchyapp.communication.OnYearPickerResult;
 
+/**
+ * Create by DavidSon Nguyen
+ */
+
 public class YearPickerDialog extends Dialog {
     private Context context;
     private int year;
