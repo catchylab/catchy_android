@@ -11,11 +11,15 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.DragEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.example.nguyentin.catchyapp.R;
 import com.example.nguyentin.catchyapp.adapter.TestAdapter;
@@ -27,29 +31,21 @@ import java.util.ArrayList;
 /**
  * Create by DavidSon Nguyen
  */
-
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener, AppBarLayout.OnOffsetChangedListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView recHotDeal;
     ArrayList<TestModel> list;
     FrameLayout btnExplore;
     ImageView imgCamera;
-    NestedScrollView nestedScroll;
-
-    CoordinatorLayout coordinatorParent;
-    AppBarLayout appBarParent;
-    CollapsingToolbarLayout collapsing;
+    ScrollView nestedScroll;
     LinearLayout linearSmallIcon, linearScroll;
-    ConstraintLayout constraintParent;
-
-    // Var
-    int height;
+    ConstraintLayout constraintParent, constraintHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_home);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         initView();
 
         list = new ArrayList<>();
@@ -71,21 +67,28 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         recHotDeal = (RecyclerView) findViewById(R.id.recHotDeal);
         btnExplore = (FrameLayout) findViewById(R.id.btnExplore);
         imgCamera = (ImageView) findViewById(R.id.imgCamera);
-        nestedScroll = (NestedScrollView) findViewById(R.id.nestedScroll);
-
-        coordinatorParent = (CoordinatorLayout) findViewById(R.id.coordinatorParent);
-        appBarParent = (AppBarLayout) findViewById(R.id.appBarParent);
-        collapsing = (CollapsingToolbarLayout) findViewById(R.id.collapsing);
+        nestedScroll = (ScrollView) findViewById(R.id.nestedScroll);
 
         linearSmallIcon  = (LinearLayout) findViewById(R.id.linearSmallIcon);
         linearScroll     = (LinearLayout) findViewById(R.id.linearScroll);
 
         constraintParent = (ConstraintLayout) findViewById(R.id.constraintParent);
+        constraintHeader = (ConstraintLayout) findViewById(R.id.constraintHeader);
 
-        height = appBarParent.getHeight();
+        nestedScroll.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+            @Override
+            public void onScrollChanged() {
+                int scrollY = nestedScroll.getScrollY(); // For ScrollView
 
-        appBarParent.addOnOffsetChangedListener(this);
-
+                if (scrollY > 30){
+                    constraintHeader.setVisibility(View.INVISIBLE);
+                    linearSmallIcon.setVisibility(View.VISIBLE);
+                }else {
+                    constraintHeader.setVisibility(View.VISIBLE);
+                    linearSmallIcon.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
     @Override
@@ -98,21 +101,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.imgCamera:
                 CatchyCamera.openCamera(this);
                 break;
-        }
-    }
-
-    @Override
-    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-        float offsetAlpha = (appBarLayout.getY() / appBarLayout.getTotalScrollRange());
-        linearSmallIcon.setAlpha(offsetAlpha * (-1));
-        if (appBarLayout.getTotalScrollRange() - Math.abs(verticalOffset) < height + 10) {
-            //collapse
-            linearSmallIcon.setEnabled(true);
-//                    collapsing.setScrimVisibleHeightTrigger(appBarLayout.getTotalScrollRange() - (height + 10));
-        } else {
-            //expands
-            linearSmallIcon.setEnabled(false);
-//                    collapsing.setScrimVisibleHeightTrigger(5);
         }
     }
 }

@@ -9,388 +9,358 @@
     android:id="@+id/constraintParent"
     tools:context=".activity.HomeActivity">
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/coordinatorParent"
+    <ScrollView
+        android:id="@+id/nestedScroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:overScrollMode="never"
         app:layout_constraintBottom_toTopOf="@+id/cameraMenuBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/appBarParent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorScreenHome"
-            android:fitsSystemWindows="true"
-            android:paddingBottom="5dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="5dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-            <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@+id/collapsing"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorScreenHome"
-                android:fitsSystemWindows="true"
-                app:contentScrim="@color/colorScreenHome"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:statusBarScrim="@color/colorWhite">
-
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/constraintHeader"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorScreenHome"
-                    android:layout_gravity="top"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp">
-
-                    <LinearLayout
-                        android:id="@+id/linearSearch"
-                        android:layout_width="0dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/edt_search"
-                        android:orientation="horizontal"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="14dp"
-                        android:weightSum="1"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/imgNotification"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <EditText
-                            android:id="@+id/edtSearchContent"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@android:color/transparent"
-                            android:gravity="center_vertical"
-                            android:singleLine="true"
-                            android:enabled="false"
-                            android:text="Tìm kiếm"
-                            android:textColor="#61000000"
-                            android:textSize="16dp" />
-
-                        <ImageView
-                            android:id="@+id/imgSearch"
-                            android:layout_width="19dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/ic_search_dark" />
-                    </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/imgNotification"
-                        android:layout_width="21dp"
-                        android:layout_height="27dp"
-                        android:layout_marginStart="20dp"
-                        android:src="@drawable/ic_notification_black"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/linearSearch"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </android.support.constraint.ConstraintLayout>
-            </android.support.design.widget.CollapsingToolbarLayout>
-        </android.support.design.widget.AppBarLayout>
-
-        <android.support.v4.widget.NestedScrollView
-            android:id="@+id/nestedScroll"
+        <LinearLayout
+            android:id="@+id/linearScroll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@color/colorScreenHome"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:id="@+id/linearSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/edt_search"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="14dp"
+                    android:weightSum="1"
+                    android:layout_marginLeft="@dimen/paddding_general"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imgNotification"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/edtSearchContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:enabled="false"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="Tìm kiếm"
+                        android:textColor="#61000000"
+                        android:textSize="16dp" />
+
+                    <ImageView
+                        android:id="@+id/imgSearch"
+                        android:layout_width="19dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_search_dark" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgNotification"
+                    android:layout_width="21dp"
+                    android:layout_height="27dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_notification_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/linearSearch"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
 
             <LinearLayout
-                android:id="@+id/linearScroll"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/paddding_general"
+                android:layout_marginRight="@dimen/paddding_general"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hi, "
+                    android:textColor="#DE000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DavidSon"
+                    android:textColor="#DE000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/linearSmallIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/ic_search_dark" />
+
+                    <ImageView
+                        android:layout_width="21dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_notification_black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/paddding_general"
+                android:layout_marginRight="@dimen/paddding_general"
+                android:layout_marginTop="12dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/paddding_general"
-                    android:layout_marginRight="@dimen/paddding_general"
-                    android:layout_marginTop="5dp"
-                    android:weightSum="1"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hi, "
-                        android:textColor="#DE000000"
-                        android:textSize="24dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtUserName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="DavidSon"
-                        android:layout_weight="1"
-                        android:textColor="#DE000000"
-                        android:textSize="24dp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:id="@+id/linearSmallIcon"
-                        android:visibility="visible"
-                        android:alpha="0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_search_dark"
-                            android:layout_marginRight="20dp"/>
-                        <ImageView
-                            android:layout_width="21dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_notification_black"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/paddding_general"
-                    android:layout_marginRight="@dimen/paddding_general"
-                    android:layout_marginTop="12dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/margin_item"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
-
-                        <FrameLayout
-                            android:id="@+id/btnExplore"
-                            android:layout_width="match_parent"
-                            android:layout_height="96dp"
-                            android:layout_marginRight="@dimen/margin_item"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_white_corner">
-
-                            <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/photo_top_left"
-                                app:radius="@dimen/corner_item_home" />
-
-                            <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/btn_top_left"
-                                app:radius="@dimen/corner_item_home" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_explore" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="Khám phá"
-                                    android:textColor="#ffffff"
-                                    android:textSize="15dp" />
-                            </LinearLayout>
-
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:id="@+id/btnImageSearch"
-                            android:layout_width="match_parent"
-                            android:layout_height="96dp"
-                            android:layout_marginLeft="@dimen/margin_item"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_white_corner">
-
-                            <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/photo_top_right"
-                                app:radius="@dimen/corner_item_home" />
-
-                            <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/btn_top_right"
-                                app:radius="@dimen/corner_item_home" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_camera" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="Tìm bằng hình ảnh"
-                                    android:textColor="#ffffff"
-                                    android:textSize="15dp" />
-                            </LinearLayout>
-                        </FrameLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_item"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="96dp"
-                            android:layout_marginRight="@dimen/margin_item"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_white_corner">
-
-                            <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/photo_bottom_left"
-                                app:radius="@dimen/corner_item_home" />
-
-                            <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/btn_bottom_left"
-                                app:radius="@dimen/corner_item_home" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/ic_store" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="Cửa hàng"
-                                    android:textColor="#ffffff"
-                                    android:textSize="15dp" />
-                            </LinearLayout>
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="96dp"
-                            android:layout_marginLeft="@dimen/margin_item"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_white_corner">
-
-                            <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/photo_bottom_right"
-                                app:radius="@dimen/corner_item_home" />
-
-                            <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/btn_bottom_right"
-                                app:radius="@dimen/corner_item_home" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/ic_search_white" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="Khác"
-                                    android:textColor="#ffffff"
-                                    android:textSize="15dp" />
-                            </LinearLayout>
-                        </FrameLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/margin_item"
                     android:orientation="horizontal"
-                    android:paddingLeft="@dimen/paddding_general"
-                    android:paddingRight="@dimen/paddding_general"
-                    android:weightSum="1">
+                    android:weightSum="2">
 
-                    <TextView
+                    <FrameLayout
+                        android:id="@+id/btnExplore"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="96dp"
+                        android:layout_marginRight="@dimen/margin_item"
                         android:layout_weight="1"
-                        android:text="Hot Deal"
-                        android:textColor="#DE000000"
-                        android:textSize="24dp"
-                        android:textStyle="bold" />
+                        android:background="@drawable/bg_white_corner">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/btn_show_all"
-                        android:elevation="2dp"
-                        android:gravity="center"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="22dp"
-                        android:paddingRight="22dp"
-                        android:paddingTop="5dp"
-                        android:text="Xem tất cả"
-                        android:textAllCaps="false"
-                        android:textColor="#ffffff"
-                        android:textSize="16dp" />
+                        <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/photo_top_left"
+                            app:radius="@dimen/corner_item_home" />
+
+                        <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/btn_top_left"
+                            app:radius="@dimen/corner_item_home" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_explore" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Khám phá"
+                                android:textColor="#ffffff"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/btnImageSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginLeft="@dimen/margin_item"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_corner">
+
+                        <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/photo_top_right"
+                            app:radius="@dimen/corner_item_home" />
+
+                        <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/btn_top_right"
+                            app:radius="@dimen/corner_item_home" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_camera" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Tìm bằng hình ảnh"
+                                android:textColor="#ffffff"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </FrameLayout>
                 </LinearLayout>
 
-                <android.support.v7.widget.RecyclerView
-                    android:visibility="visible"
-                    android:id="@+id/recHotDeal"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:nestedScrollingEnabled="false">
-                </android.support.v7.widget.RecyclerView>
-            </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
+                    android:layout_marginTop="@dimen/margin_item"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-    </android.support.design.widget.CoordinatorLayout>
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginRight="@dimen/margin_item"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_corner">
+
+                        <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/photo_bottom_left"
+                            app:radius="@dimen/corner_item_home" />
+
+                        <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/btn_bottom_left"
+                            app:radius="@dimen/corner_item_home" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/ic_store" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Cửa hàng"
+                                android:textColor="#ffffff"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginLeft="@dimen/margin_item"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_corner">
+
+                        <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/photo_bottom_right"
+                            app:radius="@dimen/corner_item_home" />
+
+                        <com.example.nguyentin.catchyapp.ui.view.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/btn_bottom_right"
+                            app:radius="@dimen/corner_item_home" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/ic_search_white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Khác"
+                                android:textColor="#ffffff"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/paddding_general"
+                android:paddingRight="@dimen/paddding_general"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hot Deal"
+                    android:textColor="#DE000000"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_show_all"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="22dp"
+                    android:paddingRight="22dp"
+                    android:paddingTop="5dp"
+                    android:text="Xem tất cả"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recHotDeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="visible"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/imgCamera"
