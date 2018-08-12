@@ -49,6 +49,6 @@
     <string name="pl_sign_up">Create new account</string>
     <string name="pl_have_account">Have account?</string>
     <string name="pl_sign_in">\u0020Sign in</string>
-    <string name="pl_lang_vn">Tiếng Việt</string>
-    <string name="pl_lang_en">English</string>
+    <string name="main_lang_vn">Tiếng Việt</string>
+    <string name="main_lang_en">English</string>
 </resources>

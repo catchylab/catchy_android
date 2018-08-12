@@ -35,7 +35,7 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_home_black"/>
+                android:src="@drawable/ic_home_color"/>
 
             <TextView
                 android:id="@+id/txtHome"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/main_home"
                 android:gravity="center"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/colorAccent"/>
         </LinearLayout>
 
         <LinearLayout

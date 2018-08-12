@@ -6,6 +6,14 @@
 
     <string name="main_home">Trang chủ</string>
     <string name="main_user">Cá nhân</string>
+    <string name="main_show_all">Xem tất cả</string>
+    <string name="main_setting">Cài đặt</string>
+    <string name="main_password">Mât khẩu</string>
+
+    <!--TODO: Main language-->
+    <string name="main_language">Ngôn ngữ</string>
+    <string name="main_lang_vn">Tiếng Việt</string>
+    <string name="main_lang_en">English</string>
 
     <!--Activity Main Languge-->
     <string name="introduce">Vui lòng chọn ngôn ngữ</string>
@@ -37,7 +45,7 @@
     <!--TODO: Explore screen - es-->
     <string name="es_main_content">Khám phá</string>
 
-
+    <!--TODO: Intro screen-->
     <string name="intro_title_1">Tìm bằng hình ảnh</string>
     <string name="intro_content_1">Dễ dàng tìm bộ quần áo yêu thích qua Camera</string>
     <string name="intro_title_2">Gợi ý thông minh</string>
@@ -46,17 +54,18 @@
     <string name="intro_content_3">Trải nghiệm thời trang tuyệt vời hơn với Catchy</string>
     <string name="intro_start">Bắt đầu ngay!</string>
 
+    <!--TODO: Pre-login screen-->
     <string name="pl_facebook">Đăng nhập bằng facebook</string>
     <string name="pl_sign_up">Tạo tài khoản mới</string>
     <string name="pl_have_account">Đã có tài khoản?</string>
     <string name="pl_sign_in">\u0020Đăng nhập</string>
-    <string name="pl_lang_vn">Tiếng Việt</string>
-    <string name="pl_lang_en">English</string>
-    
+
+    <!--Welcome screen-->
     <string name="we_content">Hãy chọn ít nhất 3 phong cách để Catchy gợi ý bạn tốt hơn nhé</string>
     <string name="we_hello">Xin chào</string>
     <string name="we_next">Tiếp tục</string>
 
+    <!--TODO: Sign up screen-->
     <string name="su_create_account">Tạo tài khoản</string>
     <string name="su_email">Email</string>
     <string name="su_email_register">Email đăng ký</string>
@@ -69,4 +78,13 @@
     <string name="su_female">Nữ</string>
     <string name="su_male">Nam</string>
     <string name="su_terms">Bạn đã xác nhận đồng ý với các chính sách và điều khoản bảo mật. <b>Chi tiết</b></string>
+
+    <!--TODO: User screen-->
+    <string name="user_edit_info">Chỉnh sửa trang cá nhân</string>
+    <string name="user_album">Bộ sưu tập</string>
+    <string name="user_change">Thay đổi</string>
+    <string name="user_intro">Giới thiệu cho bạn bè</string>
+    <string name="user_feedback">Gởi phản hồi cho Catchy</string>
+    <string name="user_terms">Điều khoản và chính sách</string>
+    <string name="user_about">Về chúng tôi</string>
 </resources>

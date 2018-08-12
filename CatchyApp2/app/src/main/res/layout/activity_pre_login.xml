@@ -126,7 +126,7 @@
                 android:button="@null"
                 android:drawableBottom="@drawable/line_language"
                 android:gravity="center"
-                android:text="@string/pl_lang_vn"
+                android:text="@string/main_lang_vn"
                 android:textAllCaps="true"
                 android:textColor="@drawable/line_language"
                 android:textSize="14sp" />
@@ -152,7 +152,7 @@
                 android:button="@null"
                 android:drawableBottom="@drawable/line_language"
                 android:gravity="center"
-                android:text="@string/pl_lang_en"
+                android:text="@string/main_lang_en"
                 android:textAllCaps="true"
                 android:textColor="@drawable/line_language"
                 android:textSize="14sp" />

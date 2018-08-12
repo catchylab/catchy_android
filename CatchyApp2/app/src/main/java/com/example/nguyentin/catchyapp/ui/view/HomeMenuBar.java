@@ -19,13 +19,13 @@ public class HomeMenuBar extends RelativeLayout implements View.OnClickListener 
     public static final int USER = 1;
 
     // Drawable
-    private int HOME_CHECKED = R.drawable.ic_home_black;
+    private int HOME_CHECKED = R.drawable.ic_home_color;
     private int HOME_NORMAL  = R.drawable.ic_home_dark;
-    private int USER_CHECKED = R.drawable.ic_user_black;
+    private int USER_CHECKED = R.drawable.ic_user_color;
     private int USER_NORMAL  = R.drawable.ic_user_dark;
 
     // Color
-    private int COLOR_CHECKED = R.color.colorBlack;
+    private int COLOR_CHECKED = R.color.colorAccent;
     private int COLOR_NORMAL  = R.color.colorUncheck;
 
     // Constructor
